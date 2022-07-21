@@ -15,7 +15,7 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     box-sizing: border-box;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto; 
 }
 .menu {
@@ -59,13 +59,17 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     justify-content: end;
 }
 .search-bar input {
-    height: 26px;
+    height: 50px;
     padding: 10px;
-    width: 230px;
-    border: solid 1px #ccc;
+    width: 246px;
+    background: #F5F5F5;
+    border: solid 1px #F5F5F5;
+    line-height: 16px;
 }
 .search-bar button {
-    border: solid 1px #ccc;
-    background: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    background: #37268C;
+    color: #FFF;
     padding: 0 10px;
 }
