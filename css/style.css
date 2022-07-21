@@ -135,6 +135,7 @@ section{
 .product .product-description {
     width: 269px;
     height: 72px;
+    overflow: hidden;
     margin-bottom: 15px;
 }
 .product .product-button {
