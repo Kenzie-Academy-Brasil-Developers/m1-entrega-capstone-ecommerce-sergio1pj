@@ -112,6 +112,7 @@ section{
     gap: 10px;
     width: 70px;
     height: 24px;
+    margin-bottom: 15px;
 }
 .product-category h5 {
     font-size: 12px;
@@ -129,10 +130,12 @@ section{
     font-weight: 600;
     line-height: 16px;
     color: #2E245E;
+    margin-bottom: 15px;
 }
 .product .product-description {
     width: 269px;
     height: 72px;
+    margin-bottom: 15px;
 }
 .product .product-button {
     font-weight: 500;
@@ -141,7 +144,7 @@ section{
     background-color: transparent;
     padding: 5px 50px;
     border-radius: 3px;
-    margin-top: 16px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 .product .product-button:hover {
