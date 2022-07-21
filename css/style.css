@@ -48,6 +48,10 @@ section{
     font-size: 16px;
     line-height: 16px;
 }
+.menu-nav ul li a:hover {
+    text-decoration: underline;
+    color: #2E245E;
+}   
 .logo {
     font-weight: 700;
     font-size: 30px;
@@ -140,3 +144,7 @@ section{
     margin-top: 16px;
     cursor: pointer;
 }
+.product .product-button:hover {
+    text-decoration: underline;
+    color: #2E245E;
+}   
