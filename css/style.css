@@ -20,7 +20,7 @@ section {
 }
 .container {
     display: flex;
-    max-width: 1500px;
+    max-width: 1673px;
     margin: 0 auto; 
 }
 .menu {
@@ -33,7 +33,7 @@ section {
     display: flex;
     align-items: center;
     width: 50%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 .menu-column.menu-second-column {
     justify-content: flex-end;
@@ -75,7 +75,7 @@ section {
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
-    background: #37268C;
+    background: #2E245E;
     color: #FFF;
     padding: 0 10px;
 }
@@ -87,7 +87,7 @@ section {
 .products .product {
     max-width: 296px;
     min-height: 408px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     background-color: #fff;
     border: 2px solid #F5F5F5;
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.1);
@@ -162,6 +162,19 @@ section {
 .shopping-cart {
     width: 20%;
 }
+.shopping-cart .shopping-cart-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #37268C;
+    border-bottom: solid 1px #F5F5F5;
+}
+.shopping-cart-header h2{
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFF;
+}
 .shopping-cart .shopping-cart-content {
     background-color:#F5F5F5;
     height: 345px;
@@ -213,25 +226,24 @@ section {
 .shopping-cart-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 126px;
     background-color: #292929;
-    gap: 24px;
+    padding: 14px;
 }
-.shopping-cart-info .shopping-cart-info-quantity {
+.shopping-cart-info .shopping-cart-info-text {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
+    height: 100%;
 }
-.shopping-cart-info-quantity h3 {
+.shopping-cart-info-text h3 {
     font-size: 16px;
     font-weight: 600;
     color: #FFF;
 }
-.shopping-cart-info-quantity p {
+.shopping-cart-info-text p {
     font-size: 16px;
     color: #F5F5F5;
 }
