@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button{
+html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -13,7 +13,7 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button{
     line-height: 28px;
     box-sizing: border-box;
 }
-.container{
+.container {
     max-width: 1200px;
     margin: 0 auto; 
 }
@@ -47,4 +47,9 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button{
     text-decoration: none;
     color: #585e65;
     line-height: 19px;
+}
+.logo {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
 }
