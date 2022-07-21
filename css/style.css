@@ -62,6 +62,7 @@ section {
 .search-bar {
     display: flex;
     justify-content: end;
+    margin-bottom: 27px;
 }
 .search-bar input {
     height: 52px;
