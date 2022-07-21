@@ -14,9 +14,14 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     line-height: 24px;
     box-sizing: border-box;
 }
+section{
+    max-width: 70%;
+    margin: 20px auto;
+}
 .container {
+    display: flex;
     max-width: 1500px;
-    margin: 0 auto; 
+    margin: auto; 
 }
 .menu {
     width: 100%;
@@ -59,7 +64,7 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     justify-content: end;
 }
 .search-bar input {
-    height: 50px;
+    height: 52px;
     padding: 10px;
     width: 246px;
     background: #F5F5F5;
@@ -69,6 +74,7 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
 .search-bar button {
     font-size: 16px;
     line-height: 16px;
+    font-weight: 500;
     background: #37268C;
     color: #FFF;
     padding: 0 10px;
@@ -79,8 +85,8 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     justify-content: space-between;
 }
 .products .product {
-    width: 20%;
-    height: 408px;
+    max-width: 300px;
+    min-height: 280px;
     background-color: #fff;
     border: 2px solid #F5F5F5;
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.1);
@@ -130,7 +136,8 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    background-color: #828282;
+    background-color: #37268C;
+    color: #FFF;
     padding: 5px 50px;
     border-radius: 3px;
     margin-top: 16px;
