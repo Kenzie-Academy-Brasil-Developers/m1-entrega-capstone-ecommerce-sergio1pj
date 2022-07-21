@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     margin: 0;
     padding: 0;
@@ -53,4 +53,19 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     font-size: 30px;
     line-height: 24px;
     color: #292929;
+}
+.search-bar {
+    display: flex;
+    justify-content: end;
+}
+.search-bar input {
+    height: 26px;
+    padding: 10px;
+    width: 230px;
+    border: solid 1px #ccc;
+}
+.search-bar button {
+    border: solid 1px #ccc;
+    background: #fff;
+    padding: 0 10px;
 }
