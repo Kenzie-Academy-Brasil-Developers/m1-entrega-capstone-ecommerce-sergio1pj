@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
+html, body, figure, header, ul, li, img, p, h1, h2, h3, nav, div, a, section, button {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -14,13 +14,13 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     line-height: 24px;
     box-sizing: border-box;
 }
-section{
+section {
     max-width: 70%;
     margin: 20px auto;
 }
 .container {
     display: flex;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto; 
 }
 .menu {
@@ -87,10 +87,10 @@ section{
 .products .product {
     max-width: 296px;
     min-height: 408px;
+    margin-bottom: 20px;
     background-color: #fff;
     border: 2px solid #F5F5F5;
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,11 +99,18 @@ section{
 .products .product:hover {
     border: 2px solid #37268C;
 }
-.product .product-img{
-    margin-bottom: 20px;
+.product .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 15px;
+    gap: 15px;
+}
+.product-info .product-img{
     max-width: 100%;
 }
-.product .product-category {
+.product-info .product-category {
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -114,44 +121,117 @@ section{
     gap: 10px;
     width: 70px;
     height: 24px;
-    margin-bottom: 15px;
-}
+}  
 .product-category h5 {
     font-size: 12px;
     font-weight: 400;
     line-height: 0px;
     color:#FFF;
 }
-.product .product-title {
+.product-info .product-title {
     font-size: 18px;
     font-weight: 700;
     color: #292929;
 }
-.product .product-price {
+.product-info .product-price {
     font-size: 16px;
     font-weight: 600;
     line-height: 16px;
     color: #2E245E;
-    margin-bottom: 15px;
+   
 }
-.product .product-description {
+.product-info .product-description {
     width: 269px;
     height: 72px;
     overflow: hidden;
-    margin-bottom: 15px;
 }
-.product .product-button {
+.product-info .product-button {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
     background-color: transparent;
     padding: 5px 50px;
     border-radius: 3px;
-    margin-bottom: 20px;
     cursor: pointer;
     transition: 0.3s ease;
 }
-.product .product-button:hover {
+.product-info .product-button:hover {
     text-decoration: underline;
     color: #2E245E;
+}
+.shopping-cart {
+    width: 20%;
+}
+.shopping-cart .shopping-cart-content {
+    background-color:#F5F5F5;
+    height: 345px;
+    padding: 10px;
+    overflow-y: scroll;
 }   
+.shopping-cart-content .shopping-cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+.shopping-cart-item .shopping-cart-item-img {
+    width: 88px;
+    height: 92px;
+}
+.shopping-cart-item .shopping-cart-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    gap: 14px;
+    width: 176px;
+    height: 92px;
+}
+.shopping-cart-item-info .shopping-cart-item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+}
+.shopping-cart-item-info .shopping-cart-item-price {
+    font-weight: 600;
+    line-height: 16px;
+    color: #2E245E;
+}
+.shopping-cart-item-info .shopping-cart-item-button {
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.shopping-cart-item-info .shopping-cart-item-button:hover {
+    text-decoration: underline;
+    color: #2E245E;
+}
+.shopping-cart-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 126px;
+    background-color: #292929;
+    gap: 24px;
+}
+.shopping-cart-info .shopping-cart-info-quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+}
+.shopping-cart-info-quantity h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+}
+.shopping-cart-info-quantity p {
+    font-size: 16px;
+    color: #F5F5F5;
+}
