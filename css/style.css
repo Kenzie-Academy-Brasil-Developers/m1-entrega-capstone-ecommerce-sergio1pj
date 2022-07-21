@@ -20,8 +20,8 @@ section{
 }
 .container {
     display: flex;
-    max-width: 1500px;
-    margin: auto; 
+    max-width: 1200px;
+    margin: 0 auto; 
 }
 .menu {
     width: 100%;
