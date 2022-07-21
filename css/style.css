@@ -29,17 +29,12 @@ section{
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
 }
-.menu-flex {
-    display: flex;
-    align-items: center;
-}
 .menu-column {
     display: flex;
     align-items: center;
     width: 50%;
     justify-content: space-evenly;
 }
-
 .menu-column.menu-second-column {
     justify-content: flex-end;
 }
