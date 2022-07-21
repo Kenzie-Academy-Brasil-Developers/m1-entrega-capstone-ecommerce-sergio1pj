@@ -82,12 +82,12 @@ html,body,figure,header,ul,li,img,p,h1,h2,h3,nav,div,a, section, button {
     width: 32%;
     height: 500px;
     background-color: #fff;
-    border-radius: 8px;
+    border: 2px solid #F5F5F5;
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.1);
     margin-bottom: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .product .product-img{
     border-radius: 4px;
