@@ -70,7 +70,7 @@ function createCartItem(card) {
     shoppingCartItemButton.classList.add("shopping-cart-item-button");
     shoppingCartItemTitle.innerText = card.querySelector(".product-title").innerText;
     shoppingCartItemPrice.innerText = `${card.querySelector(".product-price").innerText}`;
-    shoppingCartItemButton.innerText = "Remover";
+    shoppingCartItemButton.innerText = "Remover produto";
     shoppingCartItemInfo.appendChild(shoppingCartItemTitle);
     shoppingCartItemInfo.appendChild(shoppingCartItemPrice);
     shoppingCartItemInfo.appendChild(shoppingCartItemButton);
