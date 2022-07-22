@@ -1,6 +1,14 @@
 const products = document.querySelector(".products");
 const shoppingCartContent = document.querySelector(".shopping-cart-content");
 const shoppingCartData = [];
+const links = document.querySelectorAll(".menu-nav ul li a");
+links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        let newData = link.textContent !== "Todos" ? data.filter(product => product.tag[0].includes(link.textContent)) : data;
+       showProducts(newData);
+    });
+});
 function createCard(product) {
     const tagLi = document.createElement("li");
     const productImg = document.createElement("img");
@@ -21,7 +29,6 @@ function createCard(product) {
     productButton.classList.add("product-button");
     productButton.addEventListener("click", () => {
         shoppingCartData.push(product);
-        shoppingCartContent.innerHTML = "";
         showShoppingCart(shoppingCartData);
     });
     productTitle.innerText = product.nameItem;
@@ -39,6 +46,7 @@ function createCard(product) {
     return tagLi;
 }
 function showProducts(database) {
+    products.innerHTML = "";
     database.forEach((product) => {
         products.appendChild(createCard(product));
     }
@@ -61,7 +69,6 @@ function createCartItem(product) {
     shoppingCartItemButton.classList.add("shopping-cart-item-button");
     shoppingCartItemButton.addEventListener("click", () => {
         shoppingCartData.splice(shoppingCartData.indexOf(product), 1);
-        shoppingCartContent.innerHTML = "";
         showShoppingCart(shoppingCartData);
     }
     );
@@ -76,6 +83,7 @@ function createCartItem(product) {
     return tagLi;
 }
 function showShoppingCart(database) {
+    shoppingCartContent.innerHTML = "";
     database.forEach((product) => {
         shoppingCartContent.appendChild(createCartItem(product));
     }
