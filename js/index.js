@@ -1,11 +1,13 @@
-const links = document.querySelectorAll(".menu-nav ul li a");
-links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        let newData = link.textContent !== "Todos" ? data.filter(product => product.tag[0].includes(link.textContent)) : data;
-       showProducts(newData);
+function navLinks(){
+    const links = document.querySelectorAll(".menu-nav ul li a");
+    links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            let newData = link.textContent !== "Todos" ? data.filter(product => product.tag[0].includes(link.textContent)) : data;
+        showProducts(newData);
+        });
     });
-});
+}
 function createCard(product) {
     const tagLi = document.createElement("li");
     const productImg = document.createElement("img");
@@ -88,7 +90,6 @@ function showShoppingCartInfo() {
     const shoppingCartContent = document.querySelector(".shopping-cart-content").querySelectorAll("li");
     let quantity = 0;
     let total = 0;
-   
     shoppingCartContent.forEach((cartItem) => {
         quantity += 1;
         total += parseFloat(cartItem.querySelector(".shopping-cart-item-price").innerText.replace("R$ ", ""));
@@ -107,4 +108,5 @@ function showShoppingCartInfo() {
     }
     return "Mostra informações sobre o carrinho";
 }
+navLinks();
 showProducts(data);
