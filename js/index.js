@@ -22,13 +22,13 @@ function createCard(product) {
     productButton.addEventListener("click", () => {
         shoppingCartData.push(product);
         shoppingCartContent.innerHTML = "";
-        showCart(shoppingCartData);
+        showShoppingCart(shoppingCartData);
     });
     productTitle.innerText = product.nameItem;
     productDescription.innerText = product.description;
     productPrice.innerText = `R$ ${product.value}`;
     productButton.innerText = product.addCart;
-    productCategory.innerText = product.tag[0];
+    productCategory.innerHTML = `<h5>${product.tag[0]}</h5>`;
     productInfo.appendChild(productCategory);
     productInfo.appendChild(productTitle);
     productInfo.appendChild(productDescription);
@@ -43,6 +43,7 @@ function showProducts(database) {
         products.appendChild(createCard(product));
     }
     );
+    return "Atualiza a vitrine";
 }
 function createCartItem(product) {
     const tagLi = document.createElement("li");
@@ -61,7 +62,7 @@ function createCartItem(product) {
     shoppingCartItemButton.addEventListener("click", () => {
         shoppingCartData.splice(shoppingCartData.indexOf(product), 1);
         shoppingCartContent.innerHTML = "";
-        showCart(shoppingCartData);
+        showShoppingCart(shoppingCartData);
     }
     );
     shoppingCartItemTitle.innerText = product.nameItem;
@@ -74,10 +75,25 @@ function createCartItem(product) {
     tagLi.appendChild(shoppingCartItemInfo);
     return tagLi;
 }
-function showCart(database) {
+function showShoppingCart(database) {
     database.forEach((product) => {
         shoppingCartContent.appendChild(createCartItem(product));
     }
     );
+    showShoppingCartInfo(database);
+    return "Atualiza o carrinho";
+}
+function showShoppingCartInfo(database) {
+    let quantity = 0;
+    let total = 0;
+    const tagsP = document.querySelectorAll(".shopping-cart-info-text p");
+    database.forEach((product) => {
+        quantity += 1;
+        total += product.value;
+    }
+    );
+    tagsP[0].innerText = quantity;
+    tagsP[1].innerText = `R$ ${total}`;
+    return "Mostra informações sobre o carrinho";
 }
 showProducts(data);
