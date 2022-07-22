@@ -1,4 +1,3 @@
-const shoppingCartData = [];
 const links = document.querySelectorAll(".menu-nav ul li a");
 links.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -25,10 +24,6 @@ function createCard(product) {
     productDescription.classList.add("product-description");
     productPrice.classList.add("product-price");
     productButton.classList.add("product-button");
-    productButton.addEventListener("click", () => {
-        shoppingCartData.push(product);
-        showShoppingCart(shoppingCartData);
-    });
     productTitle.innerText = product.nameItem;
     productDescription.innerText = product.description;
     productPrice.innerText = `R$ ${product.value}`;
@@ -41,6 +36,13 @@ function createCard(product) {
     productInfo.appendChild(productButton);
     tagLi.appendChild(productImg);
     tagLi.appendChild(productInfo);
+    tagLi.addEventListener("click", (e) => {
+        if(e.target.classList.contains("product-button")) {
+            const shoppingCartContent = document.querySelector(".shopping-cart-content");
+            shoppingCartContent.appendChild(createCartItem(e.currentTarget));
+            showShoppingCartInfo();
+        }
+    })
     return tagLi;
 }
 function showProducts(database) {
@@ -52,7 +54,7 @@ function showProducts(database) {
     );
     return "Atualiza a vitrine";
 }
-function createCartItem(product) {
+function createCartItem(card) {
     const tagLi = document.createElement("li");
     const shoppingCartItemImg = document.createElement("img");
     const shoppingCartItemInfo = document.createElement("div");
@@ -60,44 +62,36 @@ function createCartItem(product) {
     const shoppingCartItemPrice = document.createElement("p");
     const shoppingCartItemButton = document.createElement("button");
     tagLi.classList.add("shopping-cart-item");
-    shoppingCartItemImg.src = product.img;
+    shoppingCartItemImg.src = card.querySelector(".product-img").src;
     shoppingCartItemImg.classList.add("shopping-cart-item-img");
     shoppingCartItemInfo.classList.add("shopping-cart-item-info");
     shoppingCartItemTitle.classList.add("shopping-cart-item-title");
     shoppingCartItemPrice.classList.add("shopping-cart-item-price");
     shoppingCartItemButton.classList.add("shopping-cart-item-button");
-    shoppingCartItemButton.addEventListener("click", () => {
-        shoppingCartData.splice(shoppingCartData.indexOf(product), 1);
-        showShoppingCart(shoppingCartData);
-    }
-    );
-    shoppingCartItemTitle.innerText = product.nameItem;
-    shoppingCartItemPrice.innerText = `R$ ${product.value}`;
+    shoppingCartItemTitle.innerText = card.querySelector(".product-title").innerText;
+    shoppingCartItemPrice.innerText = `${card.querySelector(".product-price").innerText}`;
     shoppingCartItemButton.innerText = "Remover";
     shoppingCartItemInfo.appendChild(shoppingCartItemTitle);
     shoppingCartItemInfo.appendChild(shoppingCartItemPrice);
     shoppingCartItemInfo.appendChild(shoppingCartItemButton);
     tagLi.appendChild(shoppingCartItemImg);
     tagLi.appendChild(shoppingCartItemInfo);
+    tagLi.addEventListener("click", (e) => {
+        if(e.target.classList.contains("shopping-cart-item-button")) {
+            e.currentTarget.remove();
+            showShoppingCartInfo();
+        }
+    });
     return tagLi;
 }
-function showShoppingCart(database) {
-    const shoppingCartContent = document.querySelector(".shopping-cart-content");
-    shoppingCartContent.innerHTML = "";
-    database.forEach((product) => {
-        shoppingCartContent.appendChild(createCartItem(product));
-    }
-    );
-    showShoppingCartInfo(database);
-    return "Atualiza o carrinho";
-}
-function showShoppingCartInfo(database) {
+function showShoppingCartInfo() {
+    const shoppingCartContent = document.querySelector(".shopping-cart-content").querySelectorAll("li");
     let quantity = 0;
     let total = 0;
    
-    database.forEach((product) => {
+    shoppingCartContent.forEach((cartItem) => {
         quantity += 1;
-        total += product.value;
+        total += parseFloat(cartItem.querySelector(".shopping-cart-item-price").innerText.replace("R$ ", ""));
     }
     );
     if(quantity !== 0) {
