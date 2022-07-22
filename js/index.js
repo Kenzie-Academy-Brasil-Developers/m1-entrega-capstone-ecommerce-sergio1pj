@@ -1,5 +1,3 @@
-const products = document.querySelector(".products");
-const shoppingCartContent = document.querySelector(".shopping-cart-content");
 const shoppingCartData = [];
 const links = document.querySelectorAll(".menu-nav ul li a");
 links.forEach((link) => {
@@ -46,6 +44,7 @@ function createCard(product) {
     return tagLi;
 }
 function showProducts(database) {
+    const products = document.querySelector(".products");
     products.innerHTML = "";
     database.forEach((product) => {
         products.appendChild(createCard(product));
@@ -83,6 +82,7 @@ function createCartItem(product) {
     return tagLi;
 }
 function showShoppingCart(database) {
+    const shoppingCartContent = document.querySelector(".shopping-cart-content");
     shoppingCartContent.innerHTML = "";
     database.forEach((product) => {
         shoppingCartContent.appendChild(createCartItem(product));
@@ -94,14 +94,24 @@ function showShoppingCart(database) {
 function showShoppingCartInfo(database) {
     let quantity = 0;
     let total = 0;
-    const tagsP = document.querySelectorAll(".shopping-cart-info-text p");
+   
     database.forEach((product) => {
         quantity += 1;
         total += product.value;
     }
     );
-    tagsP[0].innerText = quantity;
-    tagsP[1].innerText = `R$ ${total}`;
+    if(quantity !== 0) {
+        if(document.querySelector(".shopping-cart-info") !== null) {
+            document.querySelector(".shopping-cart-info").remove();
+        }
+        const shoppingCart = document.querySelector(".shopping-cart");
+        const shoppingCartInfo = document.createElement("div");
+        shoppingCartInfo.classList.add("shopping-cart-info");
+        shoppingCartInfo.innerHTML = ` <div class="shopping-cart-info-text"> <h3>Quantidade:</h3> <p>${quantity}</p> </div> <div class="shopping-cart-info-text"> <h3>Total:</h3> <p>R$ ${total}</p> </div>`;
+        shoppingCart.appendChild(shoppingCartInfo);
+    } else{
+        document.querySelector(".shopping-cart-info").remove();
+    }
     return "Mostra informações sobre o carrinho";
 }
 showProducts(data);
