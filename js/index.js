@@ -94,16 +94,15 @@ function showShoppingCartInfo() {
         total += parseFloat(cartItem.querySelector(".shopping-cart-item-price").innerText.replace("R$ ", ""));
     }
     );
-    if(quantity !== 0) {
-        if(document.querySelector(".shopping-cart-info") !== null) {
-            document.querySelector(".shopping-cart-info").remove();
-        }
+    if(quantity !== 0 && document.querySelector(".shopping-cart-info") !== null) {
+        document.querySelector(".shopping-cart-info").innerHTML = `<div class="shopping-cart-info-text"> <h3>Quantidade:</h3> <p>${quantity}</p> </div> <div class="shopping-cart-info-text"> <h3>Total:</h3> <p>R$ ${total}</p> </div>`;
+    } else if(quantity !== 0) {
         const shoppingCart = document.querySelector(".shopping-cart");
         const shoppingCartInfo = document.createElement("div");
         shoppingCartInfo.classList.add("shopping-cart-info");
-        shoppingCartInfo.innerHTML = ` <div class="shopping-cart-info-text"> <h3>Quantidade:</h3> <p>${quantity}</p> </div> <div class="shopping-cart-info-text"> <h3>Total:</h3> <p>R$ ${total}</p> </div>`;
+        shoppingCartInfo.innerHTML = `<div class="shopping-cart-info-text"> <h3>Quantidade:</h3> <p>${quantity}</p> </div> <div class="shopping-cart-info-text"> <h3>Total:</h3> <p>R$ ${total}</p> </div>`;
         shoppingCart.appendChild(shoppingCartInfo);
-    } else{
+    } else {
         document.querySelector(".shopping-cart-info").remove();
     }
     return "Mostra informações sobre o carrinho";
