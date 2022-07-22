@@ -8,6 +8,14 @@ function navLinks(){
         });
     });
 }
+function searchBar() {
+    const input = document.querySelector(".search-bar input");
+    const buttonSearch = document.querySelector(".search-bar button");
+    buttonSearch.addEventListener("click", () => {
+        let newData = data.filter(product => product.nameItem.toUpperCase().includes(input.value.trim().toUpperCase()));
+        showProducts(newData);
+    });
+}
 function createCard(product) {
     const tagLi = document.createElement("li");
     const productImg = document.createElement("img");
@@ -109,4 +117,5 @@ function showShoppingCartInfo() {
     return "Mostra informações sobre o carrinho";
 }
 navLinks();
+searchBar();
 showProducts(data);
